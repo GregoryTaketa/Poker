@@ -82,7 +82,7 @@ if missing_pop > 0:
     category_ranges.append(list(range(0,min(sample_limit,missing_pop)))) #The last element of category_ranges is the undesired stuff of which you can draw 0 or up to the sample limit or the population of undesired stuff, whichever is smaller.
     
 #Form the Cartesian Product of all Hands up to Category Limits (tuples)
-Cartesian_product = itertools.product(*category_ranges) #b is 1 list of lists, which does not work well with itertools.product.  Instead, we unpack b with * to produce list1, list2, list3, etc. which fit the iterable, iterable, iterable *args.  The output is a generator object.
+Cartesian_product = itertools.product(*category_ranges) #category_ranges is 1 list of lists, which does not work well with itertools.product.  Instead, we unpack category_ranges with * to produce list1, list2, list3, etc. which fit the iterable, iterable, iterable *args.  The output is a generator object.
     
 #Of the Cartesian Product tuples formed above, only keep the ones which can feasibly form a hand.
 feasible = []
